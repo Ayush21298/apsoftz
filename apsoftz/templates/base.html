@@ -62,8 +62,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                         <li><a href="/"> <span
-                                class="glyphicon glyphicon-star" aria-hidden="true"> Welcome</span>
-                            {{ user.userprofile.score }}</a></li>
+                                class="glyphicon glyphicon-star" aria-hidden="true"> Welcome</span></a></li>
                         <li><a href="#" data-toggle="modal" data-target="#signoutmodal">Feedback</a></li>
 
                 </ul>
@@ -111,31 +110,6 @@
         </div>
     </div>
 
-    <div class="container">
-        <!-- Messages or alerts shown as bootstrap alerts -->
-        {% if messages %}
-            {% for type, alerts in messages.items %}
-                {% for alert in alerts %}
-                    <div class="alert alert-{{ type }} alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <strong>{{ type.title }}!</strong>
-                        {{ alert }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endif %}
-
-
-        <div class="container">
-            <section class="content">
-                <div class="col-md-8 col-md-offset-2">
-                    {% block content %}{% endblock %}
-                </div>
-            </section>
-        </div>
-
-    </div> <!-- /container -->
 
 {% endblock %}
 
