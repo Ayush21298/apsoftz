@@ -1,5 +1,8 @@
+dj-database-url==0.4.2
 Django==1.11.2
-gunicorn
-whitenoise
-dj-database-url
-
+django-allauth==0.32.0
+django-el-pagination==3.1.0
+django-widget-tweaks==1.4.1
+gunicorn==19.7.1
+pipreqs==0.4.7
+whitenoise==3.3.0
