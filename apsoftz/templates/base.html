@@ -2,146 +2,94 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>{% block title %}{% endblock %}</title>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]
-
-      <!-- Material Design fonts -->
-    <!--
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Bootstrap Material Design -->
-    <!--
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-material-design.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/ripples.css' %}">
-    -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
-    <!--STYLES-->
-    <!--<link rel="stylesheet" href="{% static 'css/hacker.css' %}">-->
-    <!--STYLES END-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
-<body>
+<body id="page-top">
 
-{% block body %}
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/">apsoftz</a>
+                <a class="navbar-brand page-scroll" href="#page-top">apsoftz</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact Us</a></li>
-                    <li><a href="/social/">Social Links</a></li>
-                </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-
-                        <li><a href="/"> <span
-                                class="glyphicon glyphicon-star" aria-hidden="true"> Welcome</span></a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#signoutmodal">Feedback</a></li>
-
+                    <li>
+                        <a class="page-scroll" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/social">Social Media</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/git">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
     </nav>
 
-    <div id="signoutmodal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h2 class="modal-title">Feedback</h2>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Your Email address:</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="sub">Subject :</label>
-                            <input type="text" class="form-control" id="sub">
-                        </div>
-                        <div class="form-group">
-                            <label for="cnt">Content :</label>
-                            <input type="text" class="form-control" id="cnt">
-                        </div>
-                        <div class="checkbox">
-                            <label></label><input type="checkbox"> <b>Send Me Notifications</b>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                </div>
-                <div class="modal-footer">
-                    <form method="post" action="/accounts/logout/" class="form-horizontal">
-                        {% csrf_token %}
-                        <fieldset>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
-<br><br><br><br><br><br><br><br>
-<div class="container-fluid text-center">
-<div class="row content">
-<div class="col-sm-2 sidenav col-sm-offset-10" style="border-left:#777 solid;">
-      <!--<div class="well">-->
-      <div>
-        <p><font color=#777>Search Google</font><form method="get" action="https://www.google.com/search">
-        <input type="text" name="q" size="16" value="">
-        </form></p>
-      </div>
-      <br><br>
-      <div>
-        <p bgcolor="aqua"><a href="https://www.w3schools.com/"><img src=https://yt3.ggpht.com/-y2GQW2dcHkQ/AAAAAAAAAAI/AAAAAAAAAAA/3c2oH4kaP68/s900-c-k-no-mo-rj-c0xffffff/photo.jpg class="img-rounded" alt="w3schools" width="160" height="160"></a></p>
-      </div>
-</div>
-</div>
-</div>
+    {% block body %}{% endblock %}
 
-{% endblock %}
 
-{% block extra_body %}
-{% endblock %}
+    <!-- jQuery -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'js/creative.min.js' %}"></script>
+
 </body>
+
 </html>
